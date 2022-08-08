@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="RocketCommander.RocketControl"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:RocketCommander"
+             mc:Ignorable="d" 
+             d:DesignHeight="1600" d:DesignWidth="2600">
+    <Grid Background="Black">
+        <Grid Margin="35">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Rocket Commander" HorizontalAlignment="Left"
+                       Foreground="Red" FontSize="64" FontFamily="Bahnschrift Light SemiCondensed" />
+            <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical" Margin="0 35">
+                <ComboBox ItemsSource="{Binding RocketStatesCollection}" SelectionChanged="ComboBox_SelectionChanged" 
+                          DisplayMemberPath="{Binding}">
+                </ComboBox>
+                <Button Content="Arm" Click="ArmButton_Click"
+                        FontFamily="Bahnschrift Light SemiCondensed" FontSize="75" Width="300" HorizontalAlignment="Left" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
